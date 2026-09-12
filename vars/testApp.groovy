@@ -1,5 +1,4 @@
 def call() {
     sh 'chmod +x scripts/test.sh'
-    sh 'npm config set cache /tmp/.npm-cache --global'
-    sh './scripts/test.sh'
+    sh 'export HOME=/tmp && npm_config_cache=/tmp/.npm-cache ./scripts/test.sh'
 }
